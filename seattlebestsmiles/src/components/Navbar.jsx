@@ -12,7 +12,7 @@ const Navbar = () => {
           <FaPhone className='text-green-800' />
           <span>425-363-9864</span>
         </li>
-    <li className='p-4 flex-grow text-center'>Schedule Your Visit</li>
+    <li className='p-4 flex-grow text-center'>Schedule Your Visit!</li>
   </ul>
 </div>
 
