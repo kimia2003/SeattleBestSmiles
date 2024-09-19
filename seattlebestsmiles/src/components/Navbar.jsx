@@ -3,8 +3,8 @@ import { FaPhone } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-<div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-blue-950'>
-  <h1 className='text-3xl font-bold text-blue-950'>Seattle Best Smiles</h1>
+<div className='flex justify-between items-center h-24 max-w-[2000px] mx-auto px-4 bg-navy text-white'>
+  <img src='/SBSLogo.png' alt='Seattle Best Smiles Logo' className='h-12' />
   <ul className='flex space-x-4'>
     <li className='p-4'>Home</li>
     <li className='p-4'>About</li>
