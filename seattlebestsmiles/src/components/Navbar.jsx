@@ -3,7 +3,7 @@ import { FaPhone } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-blue-900">
+    <div className="sticky z-50 top-0 w-full bg-blue-900">
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
         <h1 className='text-3xl font-bold text-white'>Seattle Best Smiles</h1>
 

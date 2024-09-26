@@ -28,7 +28,11 @@ const ImageCarousel = () => {
     <div className="w-full overflow-hidden z-0">
       <Slider {...settings}>
         {images.map((image, index) => (
+<<<<<<< HEAD
           <div key={index}>
+=======
+          <div key={index} className="h-full">
+>>>>>>> 8ff1354e9e48f6783878e2fedc39f9851e35847e
             <img 
             src={image} 
              alt={`Slide ${index + 1}`} 
