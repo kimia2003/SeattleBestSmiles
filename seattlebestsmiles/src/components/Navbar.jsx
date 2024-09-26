@@ -1,20 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaPhone } from "react-icons/fa";
 
 const Navbar = () => {
   return (
     <div className="sticky z-50 top-0 w-full bg-blue-900">
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
-        <h1 className='text-3xl font-bold text-white'>Seattle Best Smiles</h1>
+      <img src="/SBSlogo.png" alt="Seattle Best Smiles Logo" className="max-h-16 h-auto" />
 
        
         <ul className='flex space-x-4'>
           <li className='p-4 hover:bg-blue-700 rounded-md transition-all'>
-            Home
+            <Link to="/home">Home</Link> {}
+        
           </li>
           
           <li className='p-4 hover:bg-blue-700 rounded-md transition-all'>
-            About
+            <Link to="/about">About</Link> {/* Link to AboutPage */}
           </li>
 
         
@@ -24,7 +26,7 @@ const Navbar = () => {
           </li>
 
          
-          <li className='p-4 bg-teal-500 hover:bg-teal-600 rounded-md transition-all'>
+          <li className='p-4 bg-teal-500 hover:bg-teal-600 transition-all'>
             Schedule Your Visit!
           </li>
         </ul>
