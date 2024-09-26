@@ -1,9 +1,11 @@
 import React from 'react';
+import ImageCarousel from './ImageCarousel';
 
 const HomePage = () => {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col items-center">
-   
+      {/* Carousel Section */}
+      <ImageCarousel />
       <main className="bg-teal-100 text-center p-8 rounded-lg mt-8 shadow-lg max-w-4xl">
         <h2 className="text-2xl font-semibold text-blue-950 uppercase">
           Dental Implants & Cosmetic Dentistry - Kirkland, WA
@@ -20,7 +22,6 @@ const HomePage = () => {
         <p className="mt-4 text-blue-950">
           Let us help you unlock the power of a beautiful smile that will leave a lasting impression on everyone you meet!
         </p>
-
     
         <button className="bg-teal-500 text-white py-3 px-8 rounded-lg mt-8 shadow-lg">
           Schedule Your Visit
