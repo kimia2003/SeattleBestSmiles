@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
 import AboutPage from './components/AboutPage';
@@ -12,6 +12,7 @@ const App = () => {
     <Router>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} /> {/* Use the About component here */}
       </Routes>
