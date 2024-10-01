@@ -22,10 +22,6 @@ const HomePage = () => {
         <p className="mt-4 text-blue-950">
           Let us help you unlock the power of a beautiful smile that will leave a lasting impression on everyone you meet!
         </p>
-    
-        <button className="bg-teal-500 text-white py-3 px-8 rounded-lg mt-8 shadow-lg">
-          Schedule Your Visit
-        </button>
       </main>
     </div>
   );

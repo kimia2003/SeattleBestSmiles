@@ -25,7 +25,7 @@ const Navbar = () => {
               <span>425-363-9864</span>
             </li>
             <li className='p-4 bg-teal-500 hover:bg-teal-600 transition-all'>
-              Schedule Your Visit!
+            <Link to="/schedule">Schedule Your Visit!</Link> {/* Link to the schedule page */}
             </li>
           </ul>
 
