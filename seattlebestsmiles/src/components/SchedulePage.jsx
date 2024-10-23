@@ -16,9 +16,11 @@ const SchedulePage = () => {
         </Link>
 
         {/* New Patient Button */}
-        <button className="w-full bg-teal-500 text-white py-3 px-8 rounded-lg hover:bg-teal-600 transition-all shadow-lg">
-          New Patient
-        </button>
+        <Link to="/new-patient" className="w-full">
+          <button className="w-full bg-teal-500 text-white py-3 px-8 rounded-lg hover:bg-teal-600 transition-all shadow-lg">
+            New Patient
+          </button>
+        </Link>
       </div>
     </div>
   );
