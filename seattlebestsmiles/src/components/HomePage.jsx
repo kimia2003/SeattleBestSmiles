@@ -1,7 +1,32 @@
 import React from 'react';
 import ImageCarousel from './ImageCarousel';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  // WelcomeSection as an internal function
+  const WelcomeSection = () => {
+    const handleScheduleVisit = () => {
+      navigate('/login'); // Adjust the path if your login route is different
+    };
+
+    return (
+      <section className="hero bg-blue-50 flex items-center justify-center py-16">
+        <div className="text-center max-w-4xl">
+          <h1 className="text-5xl font-bold text-blue-900">Welcome to Seattle's Best Smiles</h1>
+          <p className="mt-4 text-lg">Your journey to a brighter, healthier smile starts here!</p>
+          <button
+            onClick={handleScheduleVisit}
+            className="mt-8 bg-teal-500 text-white py-3 px-6 rounded-lg hover:bg-teal-600"
+          >
+            Schedule Your Visit
+          </button>
+        </div>
+      </section>
+    );
+  };
+
   return (
     <div className="bg-white min-h-screen text-gray-800">
       {/* Carousel Section */}
@@ -10,15 +35,7 @@ const HomePage = () => {
       </section>
 
       {/* Welcome Section */}
-      <section className="hero bg-blue-50 flex items-center justify-center py-16">
-        <div className="text-center max-w-4xl">
-          <h1 className="text-5xl font-bold text-blue-900">Welcome to Seattle's Best Smiles</h1>
-          <p className="mt-4 text-lg">Your journey to a brighter, healthier smile starts here!</p>
-          <button className="mt-8 bg-teal-500 text-white py-3 px-6 rounded-lg hover:bg-teal-600">
-            Schedule Your Visit
-          </button>
-        </div>
-      </section>
+      <WelcomeSection />
 
       {/* Main Info Section */}
       <main className="bg-teal-100 text-center p-8 rounded-lg mt-8 shadow-lg max-w-4xl mx-auto">
