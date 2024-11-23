@@ -27,7 +27,7 @@ const Navbar = () => {
     <div className="sticky z-50 top-0 w-full bg-blue-900">
       <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
         {/* Logo */}
-        <img src="/SBSlogo.png" alt="Seattle Best Smiles Logo" className="max-h-16 h-auto" />
+        <img src="images/SBSlogo.png" alt="Seattle Best Smiles Logo" className="max-h-16 h-auto" />
 
         {/* Navigation and Profile Section */}
         <div className="flex items-center space-x-4 ml-auto">
@@ -53,6 +53,10 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
+            {/* Gallery */}
+            <li className='p-4 hover:bg-blue-700 rounded-md transition-all'>
+              <Link to="/gallery">Gallery</Link>
+            </li>
 
             <li className='p-4 flex items-center space-x-2 hover:bg-blue-700 rounded-md transition-all'>
               <FaPhone className='text-green-400' />
@@ -60,6 +64,8 @@ const Navbar = () => {
                 <span>425-363-9864</span>
               </a>
             </li>
+
+            
           </ul>
           
           {/* Profile Icon with Routing to Patient Options */}
