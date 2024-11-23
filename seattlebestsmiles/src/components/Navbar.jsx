@@ -56,10 +56,12 @@ const Navbar = () => {
 
             <li className='p-4 flex items-center space-x-2 hover:bg-blue-700 rounded-md transition-all'>
               <FaPhone className='text-green-400' />
-              <span>425-363-9864</span>
+              <a href="tel:+14253639864" className="text-white">
+                <span>425-363-9864</span>
+              </a>
             </li>
           </ul>
-
+          
           {/* Profile Icon with Routing to Patient Options */}
           <Link to="/login">
             <FaUserCircle className="text-4xl cursor-pointer" />
