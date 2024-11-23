@@ -31,14 +31,14 @@ const Login = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <h1 className="text-4xl font-bold text-blue-900 mb-8">Welcome to Patient Portal</h1>
 
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <div className="bg-white p-8  shadow-lg w-full max-w-md">
         <form onSubmit={handleEmailLogin} className="space-y-4">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="w-full border border-gray-300 p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3 "
             required
           />
           <input
@@ -46,12 +46,12 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
-            className="w-full border border-gray-300 p-3 rounded-lg"
+            className="w-full border border-gray-300 p-3"
             required
           />
           <button
             type="submit"
-            className="w-full bg-teal-500 text-white py-3 rounded-lg hover:bg-teal-600 transition-all shadow-lg"
+            className="w-full bg-teal-500 text-white py-3  hover:bg-teal-600 transition-all shadow-lg"
           >
             Login with Email
           </button>
@@ -65,13 +65,13 @@ const Login = () => {
 
         <button
           onClick={handleGoogleLogin}
-          className="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-all shadow-lg"
+          className="w-full bg-red-500 text-white py-3  hover:bg-red-600 transition-all shadow-lg"
         >
           Sign in with Google
         </button>
 
         <div className="mt-4 flex justify-between">
-          <Link to="/new-patient" className="text-teal-600 hover:underline">
+        <Link to="/new-patient" className="text-teal-600 hover:underline">
             New Patient
           </Link>
           <Link to="/forgot-password" className="text-teal-600 hover:underline">

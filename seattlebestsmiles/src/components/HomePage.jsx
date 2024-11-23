@@ -18,7 +18,7 @@ const HomePage = () => {
           <p className="mt-4 text-lg text-gray-600">Your journey to a brighter, healthier smile starts here!</p>
           <button
             onClick={handleScheduleVisit}
-            className="mt-8 bg-teal-500 text-white py-3 px-6 rounded-lg hover:bg-teal-600"
+            className="mt-8 bg-teal-500 text-white py-3 px-6 hover:bg-teal-600"
           >
             Schedule Your Visit
           </button>
