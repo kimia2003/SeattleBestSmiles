@@ -1,22 +1,95 @@
 import React from 'react';
+import { FaHeart, FaLightbulb, FaUserFriends } from 'react-icons/fa';
+
+
 const About = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 pt-20">
-      <div className="max-w-5xl mx-auto p-10 bg-white shadow-lg rounded-lg">
-        <h1 className="text-5xl font-extrabold text-center text-blue-600 mb-8">About Us</h1>
-        <p className="text-xl text-gray-600 leading-relaxed text-center mb-6">
-          Welcome to <span className="font-bold text-blue-500">Seattle’s Best Smiles</span>, where we strive to create the best smiles in the greater Kirkland, WA area. Our dental office houses some of the best dentists who are dedicated to providing personalized, compassionate care in a friendly and inviting environment.
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
+
+      <header className="w-full h-60 bg-blue-900 text-white flex items-center justify-center shadow-lg">
+        <h1 className="text-5xl font-extrabold tracking-wider">About Us</h1>
+      </header>
+
+      <div className="max-w-6xl mx-auto p-12 mt-12 bg-white shadow-2xl rounded-xl space-y-8">
+        <h2 className="text-4xl font-semibold text-center text-blue-900 mb-8">Welcome to Seattle's Best Smiles</h2>
+        <p className="text-xl text-gray-700 leading-relaxed text-center mb-8 px-8">
+          At <span className="font-bold text-blue-600">Seattle’s Best Smiles</span>, we are committed to providing top-quality dental care in the greater Kirkland, WA area. Our team consists of highly skilled and compassionate professionals who prioritize your comfort and health.
         </p>
-        <p className="text-xl text-gray-600 leading-relaxed text-center mb-6">
-          We understand that going to the dentist can be nerve-wracking, but with our wide range of sedation options, advanced dental technology, and relaxing amenities, we ensure your visit will be comfortable and stress-free.
+        <p className="text-xl text-gray-700 leading-relaxed text-center mb-8 px-8">
+          We offer a wide range of services, from preventive care to advanced cosmetic and restorative treatments. Our clinic is equipped with cutting-edge technology, including sedation options and advanced imaging, to make your visit as comfortable as possible.
         </p>
-        <p className="text-xl text-gray-600 leading-relaxed text-center mb-6">
-          As a multi-specialty dental office, we provide a variety of treatment options under one roof. From routine checkups to more complex treatments like dental implants, we’re committed to helping you achieve a healthy and beautiful smile.
-        </p>
-        <p className="text-xl text-gray-600 leading-relaxed text-center">
-          If you’re in the Kirkland, WA area and looking for a dentist near you, you’ve come to the right place. We can’t wait to meet you and help you achieve the smile you deserve!
+        <p className="text-xl text-gray-700 leading-relaxed text-center px-8">
+          Whether you're here for a routine check-up or a complete smile makeover, we’re here to help you achieve the smile you deserve.
         </p>
       </div>
+
+{ /*core values section */ }
+      <section className="bg-gradient-to-r from-blue-50 to-teal-50 w-full py-16 mt-16">
+        <div className="max-w-6xl mx-auto px-8 text-center">
+          <h3 className="text-4xl font-semibold text-blue-900 mb-12">Our Core Values</h3>
+          <div className="grid gap-12 md:grid-cols-3">
+            <div className="p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center text-center">
+              <FaHeart className="text-5xl text-blue-600 mb-4" />
+              <h4 className="text-2xl font-semibold text-blue-700 mb-4">Compassionate Care</h4>
+              <p className="text-gray-600">
+                We treat each patient with empathy, respect, and understanding, creating a welcoming environment for all.
+              </p>
+            </div>
+            <div className="p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center text-center">
+              <FaLightbulb className="text-5xl text-blue-600 mb-4" />
+              <h4 className="text-2xl font-semibold text-blue-700 mb-4">Innovation</h4>
+              <p className="text-gray-600">
+                Our practice embraces the latest advancements in dental and cosmetic technology to provide precise, effective, and minimally invasive treatments.
+              </p>
+            </div>
+            <div className="p-8 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 flex flex-col items-center text-center">
+              <FaUserFriends className="text-5xl text-blue-600 mb-4" />
+              <h4 className="text-2xl font-semibold text-blue-700 mb-4">Patient-Centered Approach</h4>
+              <p className="text-gray-600">
+                We prioritize our patients’ needs, building personalized treatment plans and fostering long-term relationships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full py-16 mt-16 bg-gradient-to-r from-blue-50 to-teal-50">
+        <div className="max-w-6xl mx-auto px-8 text-center">
+          <h3 className="text-4xl font-semibold text-blue-900 mb-12">Our Services</h3>
+          <div className="grid gap-12 md:grid-cols-3">
+            <div className="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+              <h4 className="text-2xl font-semibold text-blue-700 mb-4">Restorative Dentistry</h4>
+              <p className="text-gray-600">
+              Restore the function and appearance of your teeth dental implants.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+              <h4 className="text-2xl font-semibold text-blue-700 mb-4">Cosmetic Dentistry</h4>
+              <p className="text-gray-600">
+                Enhance your smile with treatments like teeth whitening, veneers, and aesthetic contouring.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+              <h4 className="text-2xl font-semibold text-blue-700 mb-4">Facial Aesthetics</h4>
+              <p className="text-gray-600">
+              Enhance your appearance with services like Botox, dermal fillers, and PDO threads, all administered with precision and expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-blue-900 text-white text-center py-8 mt-16">
+        <div className="max-w-4xl mx-auto">
+          <h4 className="text-2xl font-semibold mb-4">Visit Us in Kirkland, WA</h4>
+          <p className="text-gray-200 mb-4">
+            13131 NE 85th ST, Ste 201, Kirkland, WA 98033
+          </p>
+          <p className="text-gray-200">
+            © 2024 Seattle’s Best Smiles. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
