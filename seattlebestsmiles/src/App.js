@@ -5,8 +5,10 @@ import Navbar from './components/Navbar';
 import AboutPage from './components/AboutPage';
 import SchedulePage from './components/SchedulePage';
 import Login from './components/login/Login';
+import Dashboard from "./components/login/Dashboard";
 import MeetTheDoctor from './components/MeetTheDoctor';
 import Gallery from './components/Gallery';
+import Accountsetup from './components/login/Accountsetup';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
 
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/schedule" element={<SchedulePage />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/login" element={<Login />} /> 
+        <Route path="/dashboard" element={<Dashboard />} /> 
+        <Route path="/accountsetup" element={<Accountsetup />} /> 
         <Route path="/meet-the-doctor" element={<MeetTheDoctor />} />
       </Routes>
     </Router>

@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { auth, googleProvider } from '../../firebase/firebaseconfig';
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, googleProvider } from "../../firebase/firebaseconfig";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/dashboard'); // replace with your intended post-login route
+      navigate("/accountsetup"); // Navigate to the dashboard after successful login
     } catch (error) {
-      console.error('Error logging in with email:', error);
+      console.error("Error logging in with email:", error);
+      setError("Invalid email or password. Please try again.");
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate('/dashboard'); // replace with your intended post-login route
+      navigate("/accountsetup"); // Navigate to the dashboard after successful login
     } catch (error) {
-      console.error('Error logging in with Google:', error);
+      console.error("Error logging in with Google:", error);
+      setError("Failed to sign in with Google. Please try again.");
     }
   };
 
@@ -31,14 +34,16 @@ const Login = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <h1 className="text-4xl font-bold text-blue-900 mb-8">Welcome to Patient Portal</h1>
 
-      <div className="bg-white p-8  shadow-lg w-full max-w-md">
+      <div className="bg-white p-8 shadow-lg w-full max-w-md">
+        {error && <p className="text-red-600 mb-4">{error}</p>}
+
         <form onSubmit={handleEmailLogin} className="space-y-4">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            className="w-full border border-gray-300 p-3 "
+            className="w-full border border-gray-300 p-3"
             required
           />
           <input
@@ -51,7 +56,7 @@ const Login = () => {
           />
           <button
             type="submit"
-            className="w-full bg-teal-500 text-white py-3  hover:bg-teal-600 transition-all shadow-lg"
+            className="w-full bg-teal-500 text-white py-3 hover:bg-teal-600 transition-all shadow-lg"
           >
             Login with Email
           </button>
@@ -65,13 +70,13 @@ const Login = () => {
 
         <button
           onClick={handleGoogleLogin}
-          className="w-full bg-red-500 text-white py-3  hover:bg-red-600 transition-all shadow-lg"
+          className="w-full bg-red-500 text-white py-3 hover:bg-red-600 transition-all shadow-lg"
         >
           Sign in with Google
         </button>
 
         <div className="mt-4 flex justify-between">
-        <Link to="/new-patient" className="text-teal-600 hover:underline">
+          <Link to="/new-patient" className="text-teal-600 hover:underline">
             New Patient
           </Link>
           <Link to="/forgot-password" className="text-teal-600 hover:underline">
