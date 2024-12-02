@@ -10,6 +10,7 @@ import Dashboard from './components/login/Dashboard';
 import MeetTheDoctor from './components/MeetTheDoctor';
 import Gallery from './components/Gallery';
 import Accountsetup from './components/login/Accountsetup';
+import NewProfile from './components/login/NewProfile';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
 
@@ -37,6 +38,7 @@ const App = () => {
           user ? <Accountsetup /> : <Navigate to="/login" />
         } />
         <Route path="/meet-the-doctor" element={<MeetTheDoctor />} />
+        <Route path="/newprofile" element={<NewProfile />} />
       </Routes>
     </Router>
   );

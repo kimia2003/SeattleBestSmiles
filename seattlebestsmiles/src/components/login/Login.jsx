@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, googleProvider, db } from "../../firebase/firebaseconfig";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore"; 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -94,7 +95,7 @@ const Login = () => {
         </button>
 
         <div className="mt-4 flex justify-between">
-          <Link to="/new-patient" className="text-teal-600 hover:underline">
+          <Link to="/newprofile" className="text-teal-600 hover:underline">
             New Patient
           </Link>
           <Link to="/forgot-password" className="text-teal-600 hover:underline">
