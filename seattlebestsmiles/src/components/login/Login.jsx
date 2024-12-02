@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, googleProvider } from "../../firebase/firebaseconfig";
+import { auth, googleProvider, db } from "../../firebase/firebaseconfig";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-
+import { doc, getDoc } from "firebase/firestore"; 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,16 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/accountsetup"); // Navigate to the dashboard after successful login
+  
+      // After login, check Firestore for the user's profile
+      const userDocRef = doc(db, "users", auth.currentUser.uid); // Reference to Firestore doc
+      const userDoc = await getDoc(userDocRef);
+  
+      if (userDoc.exists()) {
+        navigate("/dashboard"); // If profile exists, go to dashboard
+      } else {
+        navigate("/accountsetup"); // If no profile, go to account setup
+      }
     } catch (error) {
       console.error("Error logging in with email:", error);
       setError("Invalid email or password. Please try again.");
@@ -23,7 +32,16 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate("/accountsetup"); // Navigate to the dashboard after successful login
+  
+      // After login, check Firestore for the user's profile
+      const userDocRef = doc(db, "users", auth.currentUser.uid); // Reference to Firestore doc
+      const userDoc = await getDoc(userDocRef);
+  
+      if (userDoc.exists()) {
+        navigate("/dashboard"); // If profile exists, go to dashboard
+      } else {
+        navigate("/accountsetup"); // If no profile, go to account setup
+      }
     } catch (error) {
       console.error("Error logging in with Google:", error);
       setError("Failed to sign in with Google. Please try again.");

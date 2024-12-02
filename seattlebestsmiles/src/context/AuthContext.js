@@ -1,38 +1,38 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { auth } from "../firebase/firebaseconfig";
+import { auth, db } from "../firebase/firebaseconfig";
 import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 
-// Create the AuthContext
 const AuthContext = createContext();
 
-// Create a custom hook to use the AuthContext
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
 
-// AuthProvider component
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Holds the authenticated user
-  const [loading, setLoading] = useState(true); // Tracks whether auth state is being loaded
+  const [user, setUser] = useState(null);
+  const [hasProfile, setHasProfile] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Listener to track auth state changes
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
+
+      if (currentUser) {
+        // Check if the user's profile exists
+        const userDocRef = doc(db, "users", currentUser.uid);
+        const userDoc = await getDoc(userDocRef);
+        setHasProfile(userDoc.exists());
+      } else {
+        setHasProfile(false);
+      }
+
       setLoading(false);
     });
 
-    return unsubscribe; // Cleanup the listener on unmount
+    return unsubscribe;
   }, []);
 
-  // AuthContext value to pass to the provider
-  const value = {
-    user, // Authenticated user
-    isAuthenticated: !!user, // Boolean to check if user is logged in
-  };
-
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, hasProfile }}>
       {!loading && children}
     </AuthContext.Provider>
   );

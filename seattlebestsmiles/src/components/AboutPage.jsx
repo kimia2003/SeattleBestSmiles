@@ -79,7 +79,7 @@ const About = () => {
         </div>
       </section>
 
-      <footer className="bg-blue-900 text-white text-center py-8 mt-16">
+      <footer className="bg-gray-800 text-white text-center py-8 mt-16">
         <div className="max-w-4xl mx-auto">
           <h4 className="text-2xl font-semibold mb-4">Visit Us in Kirkland, WA</h4>
           <p className="text-gray-200 mb-4">

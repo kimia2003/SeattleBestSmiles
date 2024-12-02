@@ -22,11 +22,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
-      <header className="bg-blue-600 text-white w-full py-4 text-center shadow">
-        <h1 className="text-2xl font-semibold">Welcome, {user.displayName || "User"}!</h1>
-        <p className="text-sm">{user.email}</p>
-      </header>
-
+    
       <main className="bg-white shadow-lg p-6 mt-8 w-11/12 max-w-lg text-center">
         <h2 className="text-xl font-bold text-gray-700">Your Dashboard</h2>
         <p className="text-gray-600 mt-2">
