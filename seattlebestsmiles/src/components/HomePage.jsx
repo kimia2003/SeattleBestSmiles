@@ -5,6 +5,14 @@ import { useNavigate } from 'react-router-dom';
 const HomePage = () => {
   const navigate = useNavigate();
 
+  // Array of image URLs
+  const images = [
+    "/images/Pt Dr Interactions/IMG_3952.jpg",  
+    "/images/Pt Dr Interactions/IMG_3644.jpg",
+    "/images/Pt Dr Interactions/IMG_3784.jpg",
+    "/images/Pt Dr Interactions/IMG_3854.jpg",
+  ];
+
   
   const WelcomeSection = () => {
     const handleScheduleVisit = () => {
@@ -31,7 +39,7 @@ const HomePage = () => {
     <div className="bg-white min-h-screen text-gray-800">
       
       <section className="hero">
-        <ImageCarousel />
+        <ImageCarousel images={images} />
       </section>
 
       
@@ -47,7 +55,7 @@ const HomePage = () => {
           Our dental office, located in charming Kirkland, WA, utilizes cutting-edge technology to ensure that your treatment is hassle-free and convenient.
         </p>
         <p className="mt-4 text-gray-600">
-          Whether you’re interested in <span className="font-semibold text-blue-900">dental implants</span>, which can revolutionize your smile, or <span className="font-semibold text-blue-900">zirconia fixed bridges</span>, we have the expertise to make it happen.
+         If you’re interested in dental implants we have the expertise to make it happen.
         </p>
         <p className="mt-4 text-gray-600">
           Let us help you unlock the power of a beautiful smile that will leave a lasting impression on everyone you meet!

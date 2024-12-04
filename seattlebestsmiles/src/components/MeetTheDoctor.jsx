@@ -4,17 +4,18 @@ const MeetTheDoctor = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
       
-      <header className="w-full h-60 bg-blue-900 text-white flex items-center justify-center shadow-lg">
-        <h1 className="text-5xl font-extrabold tracking-wider">Meet Dr. Arkadi Razoumovitch</h1>
+      <header className="w-full h-40 bg-gradient-to-b from-blue-900 to-blue-700 text-white flex items-center justify-center shadow-lg">
+        <h1 className="text-4xl font-extrabold tracking-wider">Meet Dr. Arkadi Razoumovitch</h1>
       </header>
 
       <div className="flex flex-col lg:flex-row max-w-6xl mx-auto p-12 mt-12 bg-white shadow-2xl rounded-xl overflow-hidden space-y-8 lg:space-y-0 lg:space-x-12">
-        
+        <div className="flex-grow flex justify-center">
         <img 
-          src="/path-to-doctor-image.jpg" // Replace with the actual image path
+          src="/images/Dr Portraits/Razoumovitch, Arkadi/IMG_3680.jpg"
           alt="Dr. Arkadi Razoumovitch"
-          className="w-72 h-auto rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
+          className="w-full h-auto max-w-[500px]rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
         />
+        </div>
 
         <div className="flex flex-col justify-center space-y-6 text-left">
           <h2 className="text-3xl font-semibold text-blue-900">Arkadi Razoumovitch, DDS</h2>

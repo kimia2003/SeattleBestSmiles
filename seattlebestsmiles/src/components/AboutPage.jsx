@@ -1,14 +1,29 @@
 import React from 'react';
 import { FaHeart, FaLightbulb, FaUserFriends } from 'react-icons/fa';
+import ImageCarousel from './ImageCarousel';
 
+const About = () => 
+{
+  // Array of image URLs
+  const aboutImages = [
+    "/images/Office/DJI_0754.jpg",  
+    "/images/Office/IMG_3504.jpg",
+    "/images/Pt Dr Interactions/IMG_3639.jpg",
+    "/images/Pt Dr Interactions/IMG_3799.jpg",
+  ];
 
-const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
 
-      <header className="w-full h-60 bg-blue-900 text-white flex items-center justify-center shadow-lg">
-        <h1 className="text-5xl font-extrabold tracking-wider">About Us</h1>
+      <header className="w-full h-40 bg-gradient-to-b from-blue-900 to-blue-700 text-white flex items-center justify-center shadow-lg">
+        <h1 className="text-4xl font-extrabold tracking-wider">About Us</h1>
       </header>
+
+      <section className="w-full">
+        <ImageCarousel images={aboutImages} />
+      </section>
+
+    
 
       <div className="max-w-6xl mx-auto p-12 mt-12 bg-white shadow-2xl rounded-xl space-y-8">
         <h2 className="text-4xl font-semibold text-center text-blue-900 mb-8">Welcome to Seattle's Best Smiles</h2>
@@ -93,5 +108,4 @@ const About = () => {
     </div>
   );
 };
-
 export default About;

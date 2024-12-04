@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css'; 
 
-const ImageCarousel = () => {
+const ImageCarousel = ({images = [], additionalClasses = '' }) => {
   // Slider settings
   const settings = {
     dots: true,
@@ -16,19 +16,11 @@ const ImageCarousel = () => {
     pauseOnHover: false,
   };
 
-  // Array of image URLs
-  const images = [
-    "/images/Pt Dr Interactions/IMG_3952.jpg",  
-    "/images/Pt Dr Interactions/IMG_3952.jpg",
-    "/images/Pt Dr Interactions/IMG_3952.jpg",
-    "/images/Pt Dr Interactions/IMG_3952.jpg",
-  ];
-
   return (
-    <div className="w-full overflow-hidden z-0">
+    <div className={`w-full overflow-hidden z-0 ${additionalClasses}`}>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index}>
+          <div key={index} className = "flex-justify-center">
             <img 
               src={image} 
               alt={`Slide ${index + 1}`} 

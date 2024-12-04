@@ -4,7 +4,7 @@ import { FaPhone, FaUserCircle } from 'react-icons/fa';
 
 //reusable component for styling
 const LinkItem = ({ to, children, icon, extraClass = "" }) => (
-  <li className={`p-4 flex items-center space-x-2 hover:bg-blue-700 rounded-md transition-all ${extraClass}`}>
+  <li className={`px-4 py-2 flex items-center space-x-2 hover:bg-blue-700 rounded-md transition-all ${extraClass}`}>
     {icon && <FaPhone className='text-green-400' />}
     <Link to={to} className="text-white">
       {children}
@@ -35,14 +35,16 @@ const Navbar = () => {
 
   return (
     <div className="sticky z-50 top-0 w-full bg-gray-800">
-      <div className='flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white'>
+      <div className='flex justify-between items-center h-auto max-w-screen-xl mx-auto px-6 py-4 text-white'>
         {/* Logo */}
         <img src="/images/SBSlogo.png" alt="Seattle Best Smiles Logo" className="max-h-16 h-auto" />
 
         {/* Navigation and Profile Section */}
-        <div className="flex items-center space-x-4 ml-auto">
+  
+        <div className="flex justify-between items-center w-full md:w-auto">
+
           {/* Navigation Links */}
-          <ul className='flex space-x-4'>
+          <ul className="flex flex-wrap justify-start items-center space-x-4 w-full md:w-auto">
             <LinkItem to="/home">Home</LinkItem>
 
             {/* About Dropdown */}
@@ -70,11 +72,14 @@ const Navbar = () => {
           </ul>
 
           {/* Profile Icon with Routing to Patient Options */}
-          <Link to="/login">
-            <FaUserCircle className="text-4xl cursor-pointer" />
+          <div className="ml-auto">
+          <Link to="/login" className="flex items-center space-x-2">
+            <FaUserCircle className="text-4xl cursor-pointer hover:text-blue-400 transition-all" />
+            <span className="hidden md:inline-block text-white font-medium">Account</span>
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };
