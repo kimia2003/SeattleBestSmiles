@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, googleProvider, db } from "../../firebase/firebaseconfig";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore"; 
+import { doc, getDoc } from "firebase/firestore";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,15 +14,14 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-  
-      // After login, check Firestore for the user's profile
-      const userDocRef = doc(db, "users", auth.currentUser.uid); // Reference to Firestore doc
+
+      const userDocRef = doc(db, "users", auth.currentUser.uid);
       const userDoc = await getDoc(userDocRef);
-  
+
       if (userDoc.exists()) {
-        navigate("/dashboard"); // If profile exists, go to dashboard
+        navigate("/dashboard");
       } else {
-        navigate("/accountsetup"); // If no profile, go to account setup
+        navigate("/accountsetup");
       }
     } catch (error) {
       console.error("Error logging in with email:", error);
@@ -33,15 +32,14 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-  
-      // After login, check Firestore for the user's profile
-      const userDocRef = doc(db, "users", auth.currentUser.uid); // Reference to Firestore doc
+
+      const userDocRef = doc(db, "users", auth.currentUser.uid);
       const userDoc = await getDoc(userDocRef);
-  
+
       if (userDoc.exists()) {
-        navigate("/dashboard"); // If profile exists, go to dashboard
+        navigate("/dashboard");
       } else {
-        navigate("/accountsetup"); // If no profile, go to account setup
+        navigate("/accountsetup");
       }
     } catch (error) {
       console.error("Error logging in with Google:", error);
@@ -100,6 +98,16 @@ const Login = () => {
           </Link>
           <Link to="/forgot-password" className="text-teal-600 hover:underline">
             Forgot Password?
+          </Link>
+        </div>
+
+        <div className="mt-6 text-center">
+          <p className="text-gray-500">Are you an admin?</p>
+          <Link
+            to="/adminlogin"
+            className="text-blue-600 hover:underline font-bold"
+          >
+            Admin Login
           </Link>
         </div>
       </div>
