@@ -4,10 +4,7 @@ import Footer from './Footer';
 const MeetTheDoctor = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      
-      <header className="w-full h-40 bg-gradient-to-b from-blue-900 to-blue-700 text-white flex items-center justify-center shadow-lg">
-        <h1 className="text-4xl font-extrabold tracking-wider">Meet Dr. Arkadi Razoumovitch</h1>
-      </header>
+    
 
       <div className="flex flex-col lg:flex-row max-w-6xl mx-auto p-12 mt-12 bg-white shadow-2xl rounded-xl overflow-hidden space-y-8 lg:space-y-0 lg:space-x-12">
         <div className="flex-grow flex justify-center">

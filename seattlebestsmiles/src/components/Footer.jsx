@@ -4,13 +4,13 @@ import { FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6">
-      <div className="container mx-auto flex flex-col items-center md:items-start md:flex-row justify-between text-center md:text-left">
-        {/* Address and Office Hours Section */}
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        {/* Address and Office Hours Section - Centered */}
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-12 w-full md:w-auto">
           {/* Address */}
           <div className="text-sm">
             <p className="font-semibold">ADDRESS</p>
-            <p>13131 NE 85th St. Ste 201,</p>
+            <p>13131 NE 85th St. STE 201,</p>
             <p>Kirkland, WA 98033</p>
           </div>
 

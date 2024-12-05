@@ -16,10 +16,6 @@ const About = () =>
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
 
-      <header className="w-full h-40 bg-gradient-to-b from-blue-900 to-blue-700 text-white flex items-center justify-center shadow-lg">
-        <h1 className="text-4xl font-extrabold tracking-wider">About Us</h1>
-      </header>
-
       <section className="w-full">
         <ImageCarousel images={aboutImages} />
       </section>
