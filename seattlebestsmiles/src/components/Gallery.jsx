@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageCarousel from './ImageCarousel';
+import Footer from './Footer';
 
 const Gallery = () => {
     //before and after
@@ -42,10 +43,6 @@ const drVideos =
 return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
    
-   {/* header*/ }
-      <header className="w-full h-40 bg-gradient-to-b from-blue-900 to-blue-700 text-white flex items-center justify-center shadow-lg">
-        <h1 className="text-4xl font-extrabold tracking-wider">Gallery</h1>
-      </header>
 
       {/*slideshow */}
       <section className="w-full py-16 bg-white">
@@ -104,6 +101,7 @@ return (
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

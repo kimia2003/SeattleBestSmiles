@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHeart, FaLightbulb, FaUserFriends } from 'react-icons/fa';
 import ImageCarousel from './ImageCarousel';
+import Footer from './Footer';
 
 const About = () => 
 {
@@ -94,17 +95,7 @@ const About = () =>
         </div>
       </section>
 
-      <footer className="bg-gray-800 text-white text-center py-8 mt-16">
-        <div className="max-w-4xl mx-auto">
-          <h4 className="text-2xl font-semibold mb-4">Visit Us in Kirkland, WA</h4>
-          <p className="text-gray-200 mb-4">
-            13131 NE 85th ST, Ste 201, Kirkland, WA 98033
-          </p>
-          <p className="text-gray-200">
-            © 2024 Seattle’s Best Smiles. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

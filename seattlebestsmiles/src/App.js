@@ -11,7 +11,7 @@ import MeetTheDoctor from "./components/MeetTheDoctor";
 import Gallery from "./components/Gallery";
 import Accountsetup from "./components/login/Accountsetup";
 import NewProfile from "./components/login/NewProfile";
-import EditProfile from "./components/dashboard/EditProfile"; // Import EditProfile
+import EditProfile from "./components/dashboard/EditProfile"; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

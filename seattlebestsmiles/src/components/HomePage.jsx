@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageCarousel from './ImageCarousel';
+import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
@@ -61,11 +62,7 @@ const HomePage = () => {
           Let us help you unlock the power of a beautiful smile that will leave a lasting impression on everyone you meet!
         </p>
       </main>
-
-      
-      <footer className="bg-gray-800 text-white text-center py-6 mt-8">
-        <p>© 2024 Seattle's Best Smiles. All Rights Reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
