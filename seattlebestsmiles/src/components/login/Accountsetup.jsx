@@ -31,6 +31,7 @@ const AccountSetup = () => {
 
         if (userDoc.exists()) {
           setProfile(userDoc.data());
+          navigate("/dashboard")
         }
       } catch (err) {
         console.error("Error fetching user profile:", err);
