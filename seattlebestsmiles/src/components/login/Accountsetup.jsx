@@ -56,9 +56,9 @@ const AccountSetup = () => {
 
     try {
       const userDocRef = doc(db, "users", user.uid);
-      await setDoc(userDocRef, profile, { merge: true }); // Merge updates with existing data
+      await setDoc(userDocRef, profile, { merge: true }); 
       alert("Profile updated successfully!");
-      navigate("/dashboard"); // Redirect to dashboard or another page
+      navigate("/dashboard"); 
     } catch (err) {
       console.error("Error saving profile:", err);
       setError("Failed to save profile. Please try again.");

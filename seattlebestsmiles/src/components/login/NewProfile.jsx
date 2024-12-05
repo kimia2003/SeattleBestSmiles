@@ -17,7 +17,7 @@ const NewProfile = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       
       // After successful registration, navigate to the login page
-      navigate("/login"); // Or wherever you want to navigate after account creation
+      navigate("/dashboard"); // Or wherever you want to navigate after account creation
     } catch (err) {
       console.error("Error creating account:", err);
       setError(err.message); // Set the error message if account creation fails
