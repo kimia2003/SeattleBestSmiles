@@ -12,6 +12,7 @@ import Gallery from "./components/Gallery";
 import Accountsetup from "./components/login/Accountsetup";
 import NewProfile from "./components/login/NewProfile";
 import EditProfile from "./components/dashboard/EditProfile"; 
+import AdminLogin from "./components/admin/AdminLogin";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -46,7 +47,8 @@ const App = () => {
           }
         />
         <Route path="/newprofile" element={<NewProfile />} />
-
+        <Route path="/adminlogin" element={<AdminLogin />} />
+ 
         {/* Protected Routes */}
         <Route
           path="/dashboard"
