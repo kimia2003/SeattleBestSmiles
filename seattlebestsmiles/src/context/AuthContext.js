@@ -12,15 +12,20 @@ export const AuthProvider = ({ children }) => {
   const [hasProfile, setHasProfile] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Function to check if user has a profile
+  const checkUserProfile = async (user) => {
+    const userDocRef = doc(db, "users", user.uid);
+    const userDoc = await getDoc(userDocRef);
+    setHasProfile(userDoc.exists());
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
 
       if (currentUser) {
-        // Check if the user's profile exists
-        const userDocRef = doc(db, "users", currentUser.uid);
-        const userDoc = await getDoc(userDocRef);
-        setHasProfile(userDoc.exists());
+        // Check if the user's profile exists when the auth state changes
+        await checkUserProfile(currentUser);
       } else {
         setHasProfile(false);
       }
@@ -32,7 +37,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, hasProfile }}>
+    <AuthContext.Provider value={{ user, hasProfile, checkUserProfile }}>
       {!loading && children}
     </AuthContext.Provider>
   );

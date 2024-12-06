@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "../../firebase/firebaseconfig"; 
-import { useAuth } from "../../context/AuthContext"; 
+import { auth, db } from "../../firebase/firebaseconfig";
+import { useAuth } from "../../context/AuthContext";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 const AccountSetup = () => {
-  const { user } = useAuth(); // Access the logged-in user from AuthContext
+  const { user, checkUserProfile } = useAuth(); // Access the logged-in user and the checkUserProfile function
   const navigate = useNavigate();
 
   const [profile, setProfile] = useState({
@@ -42,7 +42,7 @@ const AccountSetup = () => {
     };
 
     fetchUserProfile();
-  }, [user]);
+  }, [user, navigate]);
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -59,6 +59,10 @@ const AccountSetup = () => {
       const userDocRef = doc(db, "users", user.uid);
       await setDoc(userDocRef, profile, { merge: true }); 
       alert("Profile updated successfully!");
+
+      // After saving the profile, refresh the hasProfile state
+      await checkUserProfile(user); // Ensure hasProfile is updated
+
       navigate("/dashboard"); 
     } catch (err) {
       console.error("Error saving profile:", err);
@@ -164,4 +168,5 @@ const AccountSetup = () => {
 };
 
 export default AccountSetup;
+
 

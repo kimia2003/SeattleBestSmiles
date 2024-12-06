@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { auth } from "../../firebase/firebaseconfig"; // Ensure you're importing Firebase correctly
-import { createUserWithEmailAndPassword } from "firebase/auth"; // This is the Firebase function to create a user
-import { useNavigate } from "react-router-dom"; // To navigate after successful registration
+import { auth } from "../../firebase/firebaseconfig"; 
+import { createUserWithEmailAndPassword } from "firebase/auth"; 
+import { useNavigate } from "react-router-dom"; 
 
 const NewProfile = () => {
   const [email, setEmail] = useState(""); // State for email
   const [password, setPassword] = useState(""); // State for password
   const [error, setError] = useState(""); // State for error messages
-  const navigate = useNavigate(); // To navigate to the login page after account creation
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submit behavior
+    e.preventDefault(); 
 
     try {
-      // Create a new user with email and password
+      
       await createUserWithEmailAndPassword(auth, email, password);
       
       console.log("Navigating to dashboard...");
