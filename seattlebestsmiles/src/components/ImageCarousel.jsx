@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from 'react-slick';
-import Footer from './Footer';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css'; 
 
@@ -33,5 +32,5 @@ const ImageCarousel = ({images = [], additionalClasses = '' }) => {
     </div>
   );
 };
-<Footer />
+
 export default ImageCarousel;

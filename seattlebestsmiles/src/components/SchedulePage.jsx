@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
 const SchedulePage = () => {
@@ -26,5 +25,4 @@ const SchedulePage = () => {
     </div>
   );
 };
-<Footer />
 export default SchedulePage;

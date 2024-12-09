@@ -41,13 +41,13 @@ const drVideos =
 ]
 
 return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white to-teal-50">
    
 
       {/*slideshow */}
-      <section className="w-full py-16 bg-white">
+      <section className="py-12">
         <div className="max-w-6xl mx-auto px-8">
-          <h2 className="text-4xl font-semibold text-blue-900 text-center mb-12">
+        <h2 className="text-2xl font-bold text-teal-700 text-center mb-8">
             Before & After Transformations
           </h2>
           <div className = "relative">
@@ -59,7 +59,7 @@ return (
 
 
         {/*testimonials*/}
-        <section className = "w-full py-16 bg-gradient-to-r from-blue-50 to-teal-50"> 
+        <section className="w-full py-12 bg-gradient-to-r from-teal-50 to-blue-50">
         <div className = "max-w-6xl mx-auto px-8"> <h2 className = "text-4xl font-semibold text-blue-900 text-center mb-12"> Patient Video Testimonials 
         </h2> <div className="grid gap-12 md:grid-cols-2"> {videoTestimonials.map((videoUrl, index) => 
         ( <div key={index} className="relative aspect-w-16 aspect-h-9 rounded-lg shadow-lg"> 
@@ -82,7 +82,7 @@ return (
 
 
 {/*Dr*/}
-<section className="w-full py-16 mt-12 bg-gradient-to-r from-blue-50 to-teal-50">
+<section className="w-full py-12 bg-gradient-to-r from-blue-50 to-teal-50">
         <div className="max-w-6xl mx-auto px-8 text-center">
           <h2 className="text-4xl font-semibold text-blue-900 mb-12">Hear From Dr. Razoumovitch</h2>
           <div className="grid gap-12 md:grid-cols-2">

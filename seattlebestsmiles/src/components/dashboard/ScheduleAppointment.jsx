@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const ScheduleAppointment = () => {
   const [service, setService] = useState("");
   const [slot, setSlot] = useState("");
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const services = ["Cleaning", "Exam", "Whitening"];
-  const slots = ["10:00 AM", "11:00 AM", "2:00 PM", "3:00 PM"]; // Replace with dynamic data
+  const slots = ["10:00 AM", "11:00 AM", "2:00 PM", "3:00 PM"]; 
 
   const handleBooking = () => {
     if (!service || !slot) {
       alert("Please select a service and a time slot.");
       return;
     }
-    alert(`Appointment booked for ${service} at ${slot}`);
+    alert(`Appointment booked for ${service} on ${selectedDate.toDateString()} at ${slot}`);
   };
 
   return (
@@ -32,6 +35,14 @@ const ScheduleAppointment = () => {
               </option>
             ))}
           </select>
+        </div>
+        <div>
+          <label className="block text-gray-600">Date</label>
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            className="w-full border p-2 rounded"
+          />
         </div>
         <div>
           <label className="block text-gray-600">Time Slot</label>
