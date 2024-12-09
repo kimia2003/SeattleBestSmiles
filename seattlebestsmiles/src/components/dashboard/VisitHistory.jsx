@@ -15,7 +15,21 @@ const VisitHistory = () => {
         const userVisits = snapshot.docs
           .map((doc) => ({ id: doc.id, ...doc.data() }))
           .filter((appt) => appt.userId === user.uid && appt.status === "Completed");
-        setVisits(userVisits);
+
+        // Add a hardcoded previous visit for demonstration
+        if (userVisits.length === 0) {
+          setVisits([
+            {
+              id: "sample",
+              service: "Dental Exam",
+              date: "November 20th, 2023",
+              notes: "Teeth cleaned thoroughly, no cavities detected.",
+              bill: "$120",
+            },
+          ]);
+        } else {
+          setVisits(userVisits);
+        }
       } catch (error) {
         console.error("Error fetching visits:", error);
       }
@@ -23,6 +37,14 @@ const VisitHistory = () => {
 
     fetchVisits();
   }, [user]);
+
+  const handleViewNotes = (notes) => {
+    alert(`Visit Notes: ${notes}`);
+  };
+
+  const handleViewBill = (bill) => {
+    alert(`Total Bill: ${bill}`);
+  };
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
@@ -32,8 +54,24 @@ const VisitHistory = () => {
       ) : (
         <ul>
           {visits.map((visit) => (
-            <li key={visit.id} className="border-b py-2">
-              {visit.service} on {visit.date}
+            <li key={visit.id} className="border-b py-2 flex justify-between items-center">
+              <div>
+                {visit.service} on {visit.date}
+              </div>
+              <div className="space-x-2">
+                <button
+                  onClick={() => handleViewNotes(visit.notes)}
+                  className="bg-teal-500 text-white py-1 px-3 rounded hover:bg-teal-600"
+                >
+                  View Notes
+                </button>
+                <button
+                  onClick={() => handleViewBill(visit.bill)}
+                  className="bg-teal-500 text-white py-1 px-3 rounded hover:bg-teal-600"
+                >
+                  View Bill
+                </button>
+              </div>
             </li>
           ))}
         </ul>
@@ -43,3 +81,4 @@ const VisitHistory = () => {
 };
 
 export default VisitHistory;
+

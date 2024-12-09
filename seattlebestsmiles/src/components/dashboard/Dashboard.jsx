@@ -20,8 +20,8 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-       <header className="bg-teal-600 text-white p-4 shadow">
-        <h1 className="text-2xl font-bold">Patient Dashboard</h1>
+       <header className="w-full h-24 bg-gradient-to-r from-teal-600 to-blue-800 text-white flex items-center justify-center shadow-lg">
+        <h1 className="text-3xl font-bold">Patient Dashboard</h1>
       </header>
 
       <div className="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -5,13 +5,24 @@ import { useAuth } from "../../context/AuthContext";
 
 const EditProfile = () => {
   const { user } = useAuth();
+  
+  // Adding additional state for phone, DOB, and insurance
   const [name, setName] = useState(user.displayName || "");
   const [email, setEmail] = useState(user.email || "");
+  const [phone, setPhone] = useState(""); // Initialize with empty string
+  const [dob, setDob] = useState(""); // Initialize with empty string
+  const [insurance, setInsurance] = useState(""); // Initialize with empty string
 
   const handleUpdate = async () => {
     try {
       const userDoc = doc(db, "users", user.uid);
-      await updateDoc(userDoc, { name, email });
+      await updateDoc(userDoc, { 
+        name, 
+        email, 
+        phone, 
+        dateOfBirth: dob, 
+        insurance 
+      });
       alert("Profile updated successfully!");
     } catch (error) {
       console.error("Error updating profile:", error);
@@ -40,9 +51,38 @@ const EditProfile = () => {
             className="w-full border p-2 rounded"
           />
         </div>
+        <div>
+          <label className="block text-gray-600">Phone Number</label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full border p-2 rounded"
+            placeholder="Enter your phone number"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-600">Date of Birth</label>
+          <input
+            type="date"
+            value={dob}
+            onChange={(e) => setDob(e.target.value)}
+            className="w-full border p-2 rounded"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-600">Insurance</label>
+          <input
+            type="text"
+            value={insurance}
+            onChange={(e) => setInsurance(e.target.value)}
+            className="w-full border p-2 rounded"
+            placeholder="Enter your insurance provider"
+          />
+        </div>
         <button
           onClick={handleUpdate}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+          className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600"
         >
           Save Changes
         </button>
@@ -52,5 +92,3 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
-
-
