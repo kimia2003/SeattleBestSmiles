@@ -1,20 +1,28 @@
 import React from 'react';
+import Footer from './Footer';
 
+//Logos
+const ADA = "/images/Logos/ADA.png";
+const AAIDL = "/images/Logos/AAIDL.png";
+const AAFE = "/images/Logos/AAFE.png";
+const AACD = "/images/Logos/AACD.png";
+const AGD = "/images/Logos/AGD.png";
+
+const DrPortrait = "/images/Dr Portraits/Razoumovitch, Arkadi/IMG_3680.jpg";
 
 const MeetTheDoctor = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-teal-50">
-    
-    {/* Header Section */}
-    <header className="w-full h-24 bg-gradient-to-r from-teal-600 to-blue-800 text-white flex items-center justify-center shadow-lg">
+      {/* Header Section */}
+      <header className="w-full h-24 bg-gradient-to-r from-teal-600 to-blue-800 text-white flex items-center justify-center shadow-lg">
         <h1 className="text-3xl font-bold">Meet Dr. Arkadi Razoumovitch</h1>
       </header>
 
-      {/*intro section*/}
+      {/* Intro Section */}
       <div className="flex flex-col lg:flex-row max-w-5xl mx-auto p-8 mt-8 bg-white shadow-md rounded-xl overflow-hidden">
         <div className="flex-shrink-0 flex justify-center">
           <img
-            src="/images/Dr Portraits/Razoumovitch, Arkadi/IMG_3680.jpg"
+            src={DrPortrait}
             alt="Dr. Arkadi Razoumovitch"
             className="w-64 h-auto rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
           />
@@ -36,7 +44,6 @@ const MeetTheDoctor = () => {
           </p>
         </div>
       </div>
-
       {/*why us*/}
       <section className="py-12 bg-gradient-to-r from-white to-teal-50">
         <div className="max-w-5xl mx-auto text-center">
@@ -75,31 +82,69 @@ const MeetTheDoctor = () => {
         </div>
       </section>
 
-      {/*DR Affiliations*/}
+      {/* DR Affiliations */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-teal-700 mb-8">
             Professional Affiliations
           </h3>
-          <ul className="grid gap-4 lg:grid-cols-2 text-left text-gray-700 text-sm">
-            <li className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
-              American Dental Association (ADA)
-            </li>
-            <li className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
-              Academy of General Dentistry (AGD)
-            </li>
-            <li className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
-              American Academy of Implant Dentistry (AAID)
-            </li>
-            <li className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
-              American Academy of Cosmetic Dentistry (AACD)
-            </li>
-            <li className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
-              American Academy of Facial Esthetics (AAFE)
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
+            <div className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
+              <img
+                src={ADA}
+                alt="ADA Logo"
+                className="w-16 h-16 object-contain"
+              />
+              <span className="text-sm text-gray-700 text-center">
+                American Dental Association (ADA)
+              </span>
+            </div>
+            <div className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
+              <img
+                src={AGD}
+                alt="AGD Logo"
+                className="w-16 h-16 object-contain"
+              />
+              <span className="text-sm text-gray-700 text-center">
+                Academy of General Dentistry (AGD)
+              </span>
+            </div>
+            <div className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
+              <img
+                src={AAIDL}
+                alt="AAIDL Logo"
+                className="w-16 h-16 object-contain"
+              />
+              <span className="text-sm text-gray-700 text-center">
+                American Academy of Implant Dentistry (AAID)
+              </span>
+            </div>
+            <div className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
+              <img
+                src={AACD}
+                alt="AACD Logo"
+                className="w-16 h-16 object-contain"
+              />
+              <span className="text-sm text-gray-700 text-center">
+                American Academy of Cosmetic Dentistry (AACD)
+              </span>
+            </div>
+            <div className="p-4 bg-teal-50 rounded-lg shadow-sm hover:shadow-md transition">
+              <img
+                src={AAFE}
+                alt="AAFE Logo"
+                className="w-16 h-16 object-contain"
+              />
+              <span className="text-sm text-gray-700 text-center">
+                American Academy of Facial Esthetics (AAFE)
+              </span>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageCarousel from './ImageCarousel';
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -81,18 +82,8 @@ const HomePage = () => {
       </main>
 
 
-      {/* Footer */}
-      <footer className="bg-teal-700 text-white py-10 mt-10">
-        <div className="max-w-5xl mx-auto text-center space-y-4">
-          <p className="text-lg font-semibold">
-            © 2024 Seattle's Best Smiles. All Rights Reserved.
-          </p>
-          <p className="text-sm">
-            Located in Kirkland, WA | Contact us for your next dental
-            appointment
-          </p>
-        </div>
-      </footer>
+          {/*Footer*/}
+    <Footer/>
     </div>
   );
 };

@@ -34,15 +34,15 @@ const drVideos =
 
 
 
-
-
-    
-
 ]
 
 return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-teal-50">
-   
+
+  <div className="bg-gradient-to-b from-white to-teal-50">
+  {/* Header */}
+  <header className="w-full h-24 bg-gradient-to-r from-teal-600 to-blue-800 text-white flex items-center justify-center shadow-lg">
+      <h1 className="text-3xl font-bold tracking-wide">Gallery</h1>
+  </header>
 
       {/*slideshow */}
       <section className="py-12">
@@ -60,49 +60,61 @@ return (
 
         {/*testimonials*/}
         <section className="w-full py-12 bg-gradient-to-r from-teal-50 to-blue-50">
-        <div className = "max-w-6xl mx-auto px-8"> <h2 className = "text-4xl font-semibold text-blue-900 text-center mb-12"> Patient Video Testimonials 
-        </h2> <div className="grid gap-12 md:grid-cols-2"> {videoTestimonials.map((videoUrl, index) => 
-        ( <div key={index} className="relative aspect-w-16 aspect-h-9 rounded-lg shadow-lg"> 
-        <iframe className="rounded-lg" src={videoUrl} 
-        title={`Patient Testimonial ${index + 1}`}
-         frameBorder="0"
-          allow="accelerometer; 
-          autoplay; 
-          clipboard-write;
-           encrypted-media; 
-           gyroscope; 
-           picture-in-picture" 
-           allowFullScreen 
-           ></iframe> 
-           </div> 
-           ))} 
-           </div> 
-           </div> 
-           </section>
-
-
-{/*Dr*/}
-<section className="w-full py-12 bg-gradient-to-r from-blue-50 to-teal-50">
-        <div className="max-w-6xl mx-auto px-8 text-center">
-          <h2 className="text-4xl font-semibold text-blue-900 mb-12">Hear From Dr. Razoumovitch</h2>
-          <div className="grid gap-12 md:grid-cols-2">
-            {drVideos.map((videoUrl, index) => (
-              <div key={index} className="relative aspect-w-16 aspect-h-9 rounded-lg shadow-lg">
-                <iframe
-                  className="rounded-lg"
-                  src={videoUrl}
-                  title={`Dr. Razoumovitch Video ${index + 1}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-teal-700 text-center mb-8">
+            Patient Video Testimonials
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+            {videoTestimonials.map((videoUrl, index) => (
+              <div key={index} className="w-full">
+                <div className="relative w-full pt-[56.25%]">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
+                    src={videoUrl}
+                    title={`Patient Testimonial ${index + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <Footer />
+
+
+{/*Dr*/}
+<section className="w-full py-12 bg-gradient-to-r from-blue-50 to-teal-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-teal-700 text-center mb-8">
+            Hear From Dr. Razoumovitch
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+            {drVideos.map((videoUrl, index) => (
+              <div key={index} className="w-full">
+                <div className="relative w-full pt-[56.25%]">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-md"
+                    src={videoUrl}
+                    title={`Dr. Razoumovitch Video ${index + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    
+    {/*Footer*/}
+    <Footer/>
     </div>
+     
+ 
+
   );
 };
 

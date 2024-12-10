@@ -13,7 +13,7 @@ const About = () =>
     "/images/Pt Dr Interactions/IMG_3799.jpg",
   ];
 
-  {/*Header*/}
+  
   return (
     <div className="bg-gradient-to-b from-white to-teal-50">
       <header className="w-full h-24 bg-gradient-to-r from-teal-600 to-blue-800 text-white flex items-center justify-center shadow-lg">
@@ -34,9 +34,12 @@ const About = () =>
         <p className="text-base text-gray-700 leading-relaxed text-center px-8">
           At{" "}
           <span className="font-bold text-teal-500">Seattle’s Best Smiles</span>
-          , we provide top-quality dental care in Kirkland, WA. Our skilled team
-          offers preventive, cosmetic, and restorative treatments to help you
-          achieve your dream smile in a comfortable and modern clinic.
+         , our passion is creating smiles that inspire confidence 
+          and transform lives. We take pride in offering specialized care, including full-arch 
+          restoration and advanced cosmetic treatments, tailored to each patient’s needs. 
+          With a focus on comfort and innovation, our team is committed to delivering exceptional 
+          results while fostering a welcoming and supportive environment.
+           Your journey to a radiant smile starts with us, where expertise meets genuine care.
         </p>
       </div>
 
@@ -117,16 +120,7 @@ const About = () =>
       </section>
 
      {/* Footer */}
-      <footer className="bg-teal-700 text-white text-center py-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-sm text-teal-100 mb-2">
-            13131 NE 85th ST, Ste 201, Kirkland, WA 98033
-          </p>
-          <p className="text-sm text-teal-100">
-            © 2024 Seattle’s Best Smiles. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
+    <Footer/>
     </div>
   );
 };
