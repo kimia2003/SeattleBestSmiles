@@ -39,7 +39,8 @@ const Footer = () => {
           © 2024 Seattle's Best Smiles. All Rights Reserved.
         </p>
         <p className="text-sm">
-          Located in Kirkland, WA | Contact us for your next dental appointment
+          13131 NE 85TH St, Ste 201
+        Kirkland, WA 98033 | Contact us for your next dental appointment
         </p>
       </div>
     </footer>
